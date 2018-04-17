@@ -3,6 +3,7 @@
     package="com.gqq.processopendemo">
 
     <application
+        android:name=".ProcessApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,12 +19,12 @@
         </activity>
 
         <activity
-            android:name=".SecondActivity"
+            android:name=".openprocess.SecondActivity"
             android:label="@string/title_activity_second"
             android:theme="@style/AppTheme.NoActionBar"
             android:process=":remote"/>
 
-        <activity android:name=".ThirdActivity"
+        <activity android:name=".openprocess.ThirdActivity"
             android:process="com.gqq.processopendemo.remote2"/>
     </application>
 
