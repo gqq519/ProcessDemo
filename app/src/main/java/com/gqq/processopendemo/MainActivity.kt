@@ -6,7 +6,10 @@ import android.os.Bundle
 import android.util.Log
 import butterknife.ButterKnife
 import butterknife.OnClick
+import com.gqq.processopendemo.model.User
 import com.gqq.processopendemo.openprocess.SecondActivity
+import com.gqq.processopendemo.openprocess.UserManager
+import java.io.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,5 +28,41 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent()
         intent.setClass(this, SecondActivity::class.java)
         startActivity(intent)
+    }
+
+    @OnClick(R.id.btn_serializable)
+    fun serialUser() {
+
+
+        Thread(Runnable {
+            kotlin.run {
+                val USER_CACHE = applicationContext.filesDir.path
+                var user = User(1, "gqq", false)
+                var dir = File(USER_CACHE + "/gqq")
+                if (!dir.exists()) run {
+                    dir.mkdirs()
+                }
+                var file = File(USER_CACHE + "cache.txt")
+                var out = ObjectOutputStream(FileOutputStream(file))
+                out.writeObject(user)
+                Log.i("TAG", "User-ser:" + user.toString() + "," + user.hashCode())
+                out.close()
+            }
+        }).start()
+    }
+
+    @OnClick(R.id.btn_reverse_serializable)
+    fun reverseUser() {
+
+        Thread(Runnable {
+            kotlin.run {
+                val USER_CACHE = applicationContext.filesDir.path
+                var file = File(USER_CACHE + "cache.txt")
+                var out = ObjectInputStream(FileInputStream(file))
+                var user = out.readObject()
+                Log.i("TAG", "User-reverse:" + user.toString() + "," + user.hashCode())
+                out.close()
+            }
+        }).start()
     }
 }

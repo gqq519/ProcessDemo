@@ -1,4 +1,4 @@
-package com.gqq.processopendemo;
+package com.gqq.processopendemo.openprocess;
 
 /**
  * Created by gqq on 2018/4/17.

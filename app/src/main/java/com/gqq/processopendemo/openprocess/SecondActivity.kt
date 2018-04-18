@@ -6,7 +6,6 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.gqq.processopendemo.R
-import com.gqq.processopendemo.UserManager
 
 import kotlinx.android.synthetic.main.activity_second.*
 
@@ -25,7 +24,7 @@ class SecondActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        Log.i("TAG", "SecondActivity:"+UserManager.userId)
+        Log.i("TAG", "SecondActivity:"+ UserManager.userId)
 
     }
 
