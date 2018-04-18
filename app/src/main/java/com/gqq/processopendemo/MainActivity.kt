@@ -65,4 +65,16 @@ class MainActivity : AppCompatActivity() {
             }
         }).start()
     }
+
+
+//    // 序列化过程
+//    User user = new User(1, "gqq", false);
+//    ObjectOutputStream out = ObjectOutputStream(new FileOutputStream(file));
+//    out.writeObject();
+//    out.close();
+//    // 反序列化过程
+//    ObjectInputStream in = ObjectInputStream(new FileInputStream(file));
+//    User user = in.readObject();
+//    in.close();
+
 }
