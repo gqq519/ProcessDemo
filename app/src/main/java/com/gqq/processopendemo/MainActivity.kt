@@ -7,6 +7,8 @@ import android.util.Log
 import butterknife.ButterKnife
 import butterknife.OnClick
 import com.gqq.processopendemo.model.User
+import com.gqq.processopendemo.model.UserModelParcel
+import com.gqq.processopendemo.model.UserParcel
 import com.gqq.processopendemo.openprocess.SecondActivity
 import com.gqq.processopendemo.openprocess.UserManager
 import java.io.*
@@ -64,6 +66,17 @@ class MainActivity : AppCompatActivity() {
                 out.close()
             }
         }).start()
+    }
+
+    @OnClick(R.id.btn_Parcelable)
+    fun parcelUser() {
+        var user = UserModelParcel(12, "hhh", false, UserParcel(1234, "内部", true))
+        var intent = Intent()
+        intent.setClass(this, SecondActivity::class.java)
+        var bundle = Bundle()
+        bundle.putParcelable("user", user)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 
 

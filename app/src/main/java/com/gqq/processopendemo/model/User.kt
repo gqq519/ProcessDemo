@@ -15,6 +15,8 @@ class User : Serializable {
     var userName = ""
     var isMale = false
 
+    constructor() {}
+
     constructor(userId: Int, userName: String, isMale: Boolean) {
         this.userId = userId
         this.userName = userName

@@ -8,4 +8,9 @@
     tools:context="com.gqq.processopendemo.openprocess.SecondActivity"
     tools:showIn="@layout/activity_second">
 
+    <TextView
+        android:id="@+id/tv_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
 </android.support.constraint.ConstraintLayout>
